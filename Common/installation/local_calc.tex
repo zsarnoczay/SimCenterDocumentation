@@ -3,7 +3,7 @@ functioning correctly, the \texttt{\getsoftwarename{}} Application
 can be tested. The simplest way to do this is by running an analysis
 using the default structural model with synthetic ground motions. By
 doing this, it is not necessary to enter any information on the
-structural model and only inputs for 
+structural model and only inputs for
 \softwareSwitch{WE-UQ}{
 the synthetic wind forces and uncertainty quantification
 }{}
@@ -11,16 +11,16 @@ the synthetic wind forces and uncertainty quantification
 the synthetic motions and uncertainty quantification
 }{}
 \softwareSwitch{PBE}{
-the synthetic motions, uncertainty quantification, and loss assessment
+the synthetic motions, uncertainty quantification, and the loss model
 }{}
 are required. With this quick setup, the
 functionality of the \texttt{\getsoftwarename{}} UI and the associated backend
 workflow can be tested. The necessary steps to perform this
-testing are provided below.
+test are provided below.
 
 A full description of how to use this software is provided
 in \Cref{chap:usage}.  In this quick test, users will only
-interface with the event tab (\texttt{EVT}), the uncertainty
+use with the event tab (\texttt{EVT}), the uncertainty
 quantification tab (\texttt{UQ}), 
 \softwareSwitch{PBE}{
 the damage and loss assessment tab (\texttt{DL}),
@@ -28,7 +28,7 @@ the damage and loss assessment tab (\texttt{DL}),
 and the results tab (\texttt{RES}).
 
 The first step is to start the \texttt{\getsoftwarename{}}
-application.  Once the application is started, the second step is to
+application.  Once the application is running, the second step is to
 input the parameters for the synthetic motions under the \texttt{EVT}
 (Event) tab. This is shown in \Cref{fig:input_event}. Click
 on the \texttt{EVT} tab which will allow the loading type to be
@@ -36,7 +36,7 @@ selected. From the dropdown menu select
 \softwareSwitch{WE-UQ}{
 \texttt{Stochastic Wind Event}. 
 }{
-\texttt{Stochastic Ground Motion Model}. Upon selecting this loading type, the loading 
+\texttt{Stochastic Ground Motion}. Upon selecting this loading type, the loading 
 model will be set as \texttt{Vlachos et al. (2018)}.
 }
 
@@ -81,7 +81,7 @@ to \texttt{vs30}. The \texttt{Provide seed value} radio button should
 be left unselected. By specifying these inputs, both $M_{W}$ and $R_{rupt}$
 will have constant values in all realizations while $V_{S_{30}}$ will
 have different values based on the model parameters specified in the
-uncertainty quantification (\texttt{UQ}) tab. With these inputs specified, navigate to the \texttt{UQ} tab. Here the distributions and their relevant parameters will be specified for the random variables defined in the analysis\textemdash only $V_{S_{30}}$
+uncertainty quantification (\texttt{UQ}) tab. With these inputs specified, navigate to the \texttt{UQ} tab. There, the distributions and their relevant parameters will be specified for the random variables defined in the analysis\textemdash only $V_{S_{30}}$
 in this case. Since $V_{S_{30}}$ was identified as a random variable
 by inputting the parameter value as text, it is automatically added as
 a random variable, as shown in \Cref{fig:input_uq}. Set the
@@ -132,12 +132,7 @@ The last step before running the analysis is to set up a damage and loss model. 
 \end{figure}
 }{}
 
-Now, click on the \texttt{RUN} button, which will bring up a pop-up
-menu that provides information on the application directory and
-the working directory. The application directory should already be
-automatically set to where \texttt{\getsoftwarename{}} is installed.
-If desired, the working directory can be changed. In order to start
-the analysis, click on the \texttt{Submit} button.
+Now, click on the \texttt{RUN} button to start the calculation. 
 
 \softwareSwitch{PBE}{
 \begin{figure}[!htbp]
@@ -180,5 +175,5 @@ in \Cref{fig:show_results} most likely will not be the same as
 those from this local test since $V_{S_{30}}$ is a random variable and
 the values realized in the simulations will be different while still
 following the same distribution. In any case, if the simulations
-completed and the \texttt{RES} tab is showing simulation results, then
+completed and the \texttt{RES} tab shows simulation results, then
 the \texttt{\getsoftwarename{}} App is properly installed and configured.
